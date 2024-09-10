@@ -1,40 +1,36 @@
-body{
+body {
     margin: none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #1F2937;
     display: flex;
     justify-content: center;
-
 }
-.container{
+
+.container {
     background-color: #283343;
     margin-top: 70px;
     padding: 70px;
     border-radius: 3px;
-
 }
-#before{
+
+#before {
     margin: none;
 }
 
-#after{
+#after {
     display: flex;
     justify-content: flex-start;
 }
-p{
-    display: inline-block;
-    width: 150px;
-    height: 20px;
-    text-align: center;
-}
 
-p.password-text{
-    display: inline-block;
-    width: 120px;
+p.password-text {
+    flex: 1;  /* Take available space */
     height: 20px;
-    text-align: center;
+    text-align: left;
     margin: 0;
     color: #4ADF86;
+    overflow: hidden; /* Avoid text overflow */
+    white-space: nowrap; /* Ensure the text stays on one line */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
 }
 
 .copy-icon {
@@ -42,79 +38,78 @@ p.password-text{
     cursor: pointer;
     color: #4ADF86;
     font-size: 18px;
-    margin-left: 5px;
+    margin-left: 10px;
+    padding: 5px;
 }
 
 .copy-icon:hover {
     color: #00ff99;
 }
-#first{
+
+#first, #second {
+    display: flex;
+    align-items: center; /* Align items vertically */
     background-color: #313f52;
-    padding: 5px 20px;
+    padding: 5px 10px;
     border-radius: 5px;
     color: #4ADF86;
-    align-items: center; /* Align text and icon vertically */
+    width: 250px;
+    height: 30px;
+    margin-right: 0px;
     justify-content: space-between; /* Space between password and icon */
-    width: 180px;
 }
-#second{
-    background-color: #313f52;
-    margin-left: 10px;
-    padding: 5px 20px;
-    border-radius: 5px;
-    color: #4ADF86;
-    align-items: center; /* Align text and icon vertically */
-    justify-content: space-between; /* Space between password and icon */
-    width: 180px;
+
+#second {
+    margin-left: 20px;
 }
-h1{
+
+h1 {
     margin: none;
     padding: none;
 }
 
-#line-one{
+#line-one {
     color: white;
 }
-#line-two{
-    color: #4ADF86;
 
+#line-two {
+    color: #4ADF86;
 }
-h5{
+
+h5 {
     color: #D5D4D8;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
 }
 
-button{
+button {
     background-color: #3bc171;
     color: rgb(255, 255, 255);
     border: none;
     padding: 5px 20px;
     font-weight: bolder;
     font-size: large;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-button:hover{
+
+button:hover {
     background-color: #249d55;
 }
 
-hr{
+hr {
     height: 1px;
-    border-width:0;
-    color:rgb(73, 63, 63);
-    background-color:gray;
+    border-width: 0;
+    color: rgb(73, 63, 63);
+    background-color: gray;
     border-radius: 4px;
-    margin-top: 20px;
- }
-
-
+    margin: 30px 0px;
+}
 
 
  @media (max-width: 768px) {
     .container {
-        margin-top: 20px;
+        margin-top: 50px;
 
     }
 
@@ -122,10 +117,16 @@ hr{
         flex-direction: column;
     }
 
-    #first, #second {
+    #first{
         flex: 1 1 100%;
         margin-left: 0;
     }
+    #second {
+        flex: 1 1 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
     p{
         margin: none;
         text-align: center;
@@ -135,6 +136,9 @@ hr{
         width: 100%;
         font-size: medium;
         padding: 8px 10px;
+    }
+    hr{
+        margin: none;
     }
 }
 
@@ -146,5 +150,7 @@ hr{
     button {
         font-size: small;
     }
+    hr{
+        margin: none;
+    }
 }
-
